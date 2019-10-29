@@ -1,0 +1,69 @@
+﻿
+@model IEnumerable<SuperHero.Models.Hero>
+
+@{
+    ViewBag.Title = "HeroIndex";
+}
+
+<h2>HeroIndex</h2>
+
+<div>
+    <h4>Hero</h4>
+    
+    
+    <dl class="dl-horizontal">
+        @foreach (var item in Model)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.superHeroName)
+               
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelitem => item.superHeroName);
+                @Html.ActionLink("Edit Hero", "Edit", new { id = item.Id })
+                @Html.ActionLink("Delete Hero", "Delete", new { id = item.Id })
+
+
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.alterEgo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelitem => item.alterEgo);
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.primaryPower)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelitem => item.primaryPower);
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.secondaryPower)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelitem => item.secondaryPower);
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.catchPhrase)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelitem => item.catchPhrase);
+            </dd>
+            
+            }
+
+    </dl>
+</div>
+
+<p>
+   @Html.ActionLink("Add Hero","Create") 
+</p>
